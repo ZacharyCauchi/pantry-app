@@ -9,7 +9,7 @@ Developed using PHP and a sprinkle of JS, Pantry Helper is being made as my fina
 
 - [x] Allow users to sign up
 - [x] Allow users to edit their personal information
-- [ ] Upload database export
+- [x] Upload database export
 - [ ] Create admin interface
 - [ ] Connect to Recipe API
 - [ ] Allow users to browse recipes
