@@ -27,5 +27,9 @@
                 </form>
             </div>
         </div>
+    <footer>
+    <div class="footerText">This is the Footer</div>
+    <?php echo $e; ?>
+    </footer>
     </body>
 </html>
