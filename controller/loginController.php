@@ -14,9 +14,12 @@ if(isset($_GET['logout'])) {
 }
 
 if(isset($_SESSION['loggedIn'])){
-    if($_SESSION['loggedIn'] == true){
-    include '../view/navbarUser.php';
-    include '../view/pages/homePage.php';
+    if($_SESSION['loggedIn'] == 'user'){
+        include '../view/navbarUser.php';
+        include '../view/pages/homePage.php';
+    } else if($_SESSION['loggedIn'] == 'admin') {
+        include '../view/navbarAdmin.php';
+        include '../view/pages/adminPage.php';
     }
 } 
 if(isset($_GET['state'])){
