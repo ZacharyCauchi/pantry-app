@@ -48,6 +48,4 @@ else {
     include '../view/pages/homePage.php';
     }    
 }
-
-
 ?>

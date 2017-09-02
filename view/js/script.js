@@ -42,10 +42,11 @@ function switchToRegister() {
 function showAccountUpdate(userID) {
          var request = $.ajax({
             method: "POST",
-            url: "../model/selectFunction.php?table=users&state=returnAll",
+            url: "../controller/dbFunctionsController.php?state=showUserDetails",
             data: { user: userID }
             })
             .done(function(userDetails) {
+                console.log(userDetails);
                 document.getElementById("updateFirstName").value = userDetails['firstName'];
                 document.getElementById("updateLastName").value = userDetails['lastName'];
                 document.getElementById("updateEmail").value = userDetails['email'];
