@@ -2,7 +2,7 @@
 
 ## About
 
-Pantry Helper is a web app to help people make food at home using ingredients they already have at home. 
+Pantry Helper is a web app to help people make great meals using ingredients they already have at home. 
 Developed using PHP and a sprinkle of JS, Pantry Helper is being made as my final project at TAFE Brisbane while I undergo a diploma course studying web development
 
 ## To-do
