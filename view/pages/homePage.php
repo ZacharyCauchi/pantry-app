@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../view/materialize/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../view/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mada:200,400" rel="stylesheet">
-    <script src='../view/js/script.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../view/materialize/js/materialize.min.js"></script>
+    <script src='../view/js/script.js'></script>
     <title>Pantry Helper</title>
 </head>
 <body id="body">
@@ -62,32 +65,32 @@
             </h3>
 
         </div>
-        <input type="text" class="ingredientSearch" placeholder="What ingredients do you have on hand?"></input>
+        <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?"></input>
     </div>
     <div class="resultSection" id="resultID">
         <div class="recipeSection">
-            <div class=recipeStyle>
+            <div class="recipeStyle card">
                 <h4>Recipe #1</h4>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
                 veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
             </div>
-            <div class=recipeStyle>
+            <div class="recipeStyle card">
                 <h4>Recipe #2</h4>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
                 veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
             </div>
-            <div class=recipeStyle>
+            <div class="recipeStyle card">
                 <h4>Recipe #3</h4>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
                 veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
             </div>
-            <div class=recipeStyle>
+            <div class="recipeStyle card">
                 <h4>Recipe #4</h4>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
@@ -96,12 +99,12 @@
             </div>
         </div>
         <div class="ingredientSection">
-            <div class=ingredientStyle>Butter</div>
-            <div class=ingredientStyle>Chicken thigh fillet</div>
-            <div class=ingredientStyle>Canned tomatoes</div>
-            <div class=ingredientStyle>Olive oil</div>
-            <div class=ingredientStyle>Beef mince</div>
-            <div class=ingredientStyle>Penne pasta</div>
+            <div class="ingredientStyle card red lighten-3">Butter</div>
+            <div class="ingredientStyle card red lighten-3">Chicken thigh fillet</div>
+            <div class="ingredientStyle card red lighten-3">Canned tomatoes</div>
+            <div class="ingredientStyle card red lighten-3">Olive oil</div>
+            <div class="ingredientStyle card red lighten-3">Beef mince</div>
+            <div class="ingredientStyle card red lighten-3">Penne pasta</div>
         </div>
     </div>
     <div class="aboutSection" id="aboutID">

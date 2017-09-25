@@ -1,3 +1,7 @@
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
+
 function scrollFunction1(){
     $('html, body').animate({
         scrollTop: $("#resultID").offset().top - 90
