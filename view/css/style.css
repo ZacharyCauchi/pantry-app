@@ -95,6 +95,8 @@ h1 {
     font-weight: 400;
     padding-left: 1%;
     cursor: pointer;
+    width: auto;
+    white-space: nowrap;
 }
 
 h2 {
