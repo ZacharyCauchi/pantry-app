@@ -65,7 +65,7 @@
             </h3>
 
         </div>
-        <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?"></input>
+        <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?" onChange="ingredientPreview(this.value)"></input>
     </div>
     <div class="resultSection" id="resultID">
         <div class="recipeSection">

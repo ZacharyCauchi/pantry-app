@@ -61,3 +61,16 @@ function showAccountUpdate(userID) {
     document.getElementById("registrationBox").style.display = "none";
     document.getElementById("updateDetailsBox").style.display = "block";
 }
+
+/* Ingredient Search Code*/ 
+
+function ingredientPreview(search){
+    var request = $.ajax({
+        method: "POST",
+        url: "../controller/dbFunctionsController.php?state=ingredientSearch",
+        data: { startsWith: search }
+        })
+        .done(function(ingredients) {
+            console.log(ingredients);
+        });
+}
