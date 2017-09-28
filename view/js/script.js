@@ -71,6 +71,7 @@ function ingredientPreview(search){
         data: { startsWith: search }
         })
         .done(function(ingredients) {
+            var ingredients = JSON.parse(ingredients);
             console.log(ingredients);
         });
 }
