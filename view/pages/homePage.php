@@ -112,7 +112,7 @@
     </div>
     <footer>
         <div class="footerText">This is the Footer</div>
-        <?php echo $e; ?>
+        <?php if(isset($e)){echo $e;} ?>
     </footer>
 </body>
 </html>
