@@ -11,7 +11,7 @@ Developed using PHP and a sprinkle of JS, Pantry Helper is being made as my fina
 - [x] Allow users to edit their personal information
 - [x] Upload database export
 - [ ] Create admin interface
-- [ ] Connect to Recipe API
+- [x] Connect to Recipe API
 - [ ] Allow users to browse recipes
 - [ ] Allow users to save ingredients
 - [ ] Let's be honest - most of the website's core functionality
