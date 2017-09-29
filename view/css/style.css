@@ -80,6 +80,24 @@ body {
     background-color: #EEEEEE;
 }
 
+#ingredientSearchList {
+    position: relative;
+    z-index: 99;
+    background-color: white;
+    width: 70%;
+    height: auto;
+    font-family: 'mada';
+    font-size: 2em;
+}
+
+.ingredientListEle {
+    padding: 1%;
+}
+
+.ingredientListEle:hover {
+    background-color: #E4E4E4;
+}
+
 .headerText {
     font-family: 'mada';
     font-weight: 400;

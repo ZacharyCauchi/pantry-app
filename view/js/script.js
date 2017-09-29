@@ -73,5 +73,14 @@ function ingredientPreview(search){
         .done(function(ingredients) {
             var ingredients = JSON.parse(ingredients);
             console.log(ingredients);
+            var ingBox = document.getElementById("ingredientSearchList")
+            ingBox.innerHTML = "";
+            for(i = 0; i < ingredients.length; i++){
+                var n = document.createElement("div");
+                var t = document.createTextNode(ingredients[i].name);
+                n.appendChild(t);
+                n.className = "ingredientListEle";
+                ingBox.appendChild(n);
+            }
         });
 }
