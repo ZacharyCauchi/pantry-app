@@ -150,7 +150,7 @@ h3 {
     align-items: center;
 }
 
-.ingredientSection {
+#ingredientSection {
     width: 30%;
     height: auto;
     background-color: #ededed;

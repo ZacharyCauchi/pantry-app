@@ -100,7 +100,7 @@
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
             </div>
         </div>
-        <div class="ingredientSection">
+        <div id="ingredientSection">
             <div class="ingredientStyle card red lighten-3">Butter</div>
             <div class="ingredientStyle card red lighten-3">Chicken thigh fillet</div>
             <div class="ingredientStyle card red lighten-3">Canned tomatoes</div>

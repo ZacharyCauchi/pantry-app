@@ -90,5 +90,14 @@ function addIngredient(name){
     pantryList = ( typeof pantryList != 'undefined' && pantryList instanceof Array ) ? pantryList : [];
     pantryList.push(name);
     console.log(pantryList);
+    var ingredientSec = document.getElementById("ingredientSection")
+    ingredientSec.innerHTML = '';
+    for(i = 0; i < pantryList.length; i++){
+        var n = document.createElement("div");
+        var t = document.createTextNode(pantryList[i]);
+        n.appendChild(t);
+        n.className = "ingredientStyle card red lighten-3";
+        ingredientSec.appendChild(n);
+    }
 
 }
