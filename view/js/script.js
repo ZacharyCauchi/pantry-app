@@ -62,7 +62,7 @@ function showAccountUpdate(userID) {
     document.getElementById("updateDetailsBox").style.display = "block";
 }
 
-/* Ingredient Search Code*/ 
+/*Ingredient Search*/ 
 
 function ingredientPreview(search){
     var request = $.ajax({
@@ -80,7 +80,15 @@ function ingredientPreview(search){
                 var t = document.createTextNode(ingredients[i].name);
                 n.appendChild(t);
                 n.className = "ingredientListEle";
+                n.setAttribute("onClick", "addIngredient('" + ingredients[i].name + "')");
                 ingBox.appendChild(n);
             }
         });
+}
+
+function addIngredient(name){
+    pantryList = ( typeof pantryList != 'undefined' && pantryList instanceof Array ) ? pantryList : [];
+    pantryList.push(name);
+    console.log(pantryList);
+
 }
