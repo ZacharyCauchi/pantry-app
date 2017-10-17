@@ -12,7 +12,7 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
             $query .= $searchTerm[$i] . ',';
         }
         $query = substr($query, 0, -1); 
-        $url .= $query . '&limitLicense=false&number=5&ranking=2';
+        $url .= $query . '&limitLicense=false&number=10&ranking=2';
     }
     $response = file_get_contents($url,false,$context);
     header('Content-Type: application/json');

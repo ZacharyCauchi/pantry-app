@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('.modal').modal();
+  });
+
 $( document ).ready(function(){
     $(".button-collapse").sideNav();
 })
@@ -101,6 +105,8 @@ function addIngredient(name){
     recipeSearch(pantryList);
 }
 
+/* Recipe Search */
+
 function recipeSearch(ingArr){
     var request = $.ajax({
     method: "POST",
@@ -109,6 +115,16 @@ function recipeSearch(ingArr){
     })
     .done(function(recipes) {
         console.log(JSON.parse(recipes));
+        var recipeList = JSON.parse(recipes)
+        var recipeSec = document.getElementById("recipeSection")
+        recipeSec.innerHTML = '';
+        for(i = 0; i < recipeList.length; i++){
+            var n = document.createElement("div");
+            var t = document.createTextNode(recipeList[i].title);
+            n.appendChild(t);
+            n.className = "recipeStyle card";
+            recipeSec.appendChild(n);
+        }
     })
     .fail(function(msg){
         console.log(msg);

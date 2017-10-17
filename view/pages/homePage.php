@@ -70,13 +70,23 @@
         </div>
     </div>
     <div class="resultSection" id="resultID">
-        <div class="recipeSection">
+        <div id="recipeSection">
             <div class="recipeStyle card">
-                <h4>Recipe #1</h4>
+            <a href="#modal1" class="modal-trigger">Recipe #1</a>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
                 veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
+                
             </div>
             <div class="recipeStyle card">
                 <h4>Recipe #2</h4>
@@ -98,6 +108,15 @@
                 est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
                 veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
                 animi, quasi. Eum sequi neque odit, similique nisi adipisci!
+            </div>
+            <div id="modal1" class="modal"> 
+                <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
             </div>
         </div>
         <div id="ingredientSection">

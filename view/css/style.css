@@ -141,7 +141,7 @@ h3 {
     flex-direction: row;
 }
 
-.recipeSection {
+#recipeSection {
     width: 70%;
     height: auto;
     background-color: #f7f7f7;
