@@ -71,61 +71,8 @@
     </div>
     <div class="resultSection" id="resultID">
         <div id="recipeSection">
-            <div class="recipeStyle card">
-            <a href="#modal1" class="modal-trigger">Recipe #1</a>
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
-            </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
-                est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
-                veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
-                animi, quasi. Eum sequi neque odit, similique nisi adipisci!
-                
-            </div>
-            <div class="recipeStyle card">
-                <h4>Recipe #2</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
-                est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
-                veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
-                animi, quasi. Eum sequi neque odit, similique nisi adipisci!
-            </div>
-            <div class="recipeStyle card">
-                <h4>Recipe #3</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
-                est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
-                veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
-                animi, quasi. Eum sequi neque odit, similique nisi adipisci!
-            </div>
-            <div class="recipeStyle card">
-                <h4>Recipe #4</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempore, voluptates. Numquam eos 
-                est, voluptates dolorem. Nesciunt, illo. Odio vero corporis, ratione quidem sapiente repellat optio 
-                veritatis sit necessitatibus? Vel harum consequatur ad fuga nesciunt ea recusandae, ab veniam ut rerum, 
-                animi, quasi. Eum sequi neque odit, similique nisi adipisci!
-            </div>
-            <div id="modal1" class="modal"> 
-                <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
-                </div>
-                <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
-            </div>
         </div>
         <div id="ingredientSection">
-            <div class="ingredientStyle card red lighten-3">Butter</div>
-            <div class="ingredientStyle card red lighten-3">Chicken thigh fillet</div>
-            <div class="ingredientStyle card red lighten-3">Canned tomatoes</div>
-            <div class="ingredientStyle card red lighten-3">Olive oil</div>
-            <div class="ingredientStyle card red lighten-3">Beef mince</div>
-            <div class="ingredientStyle card red lighten-3">Penne pasta</div>
         </div>
     </div>
     <div class="aboutSection" id="aboutID">

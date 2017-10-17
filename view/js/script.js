@@ -123,10 +123,39 @@ function recipeSearch(ingArr){
             var t = document.createTextNode(recipeList[i].title);
             n.appendChild(t);
             n.className = "recipeStyle card";
+            n.setAttribute("onClick", "getRecipeInfo(" + recipeList[i].id + ")");
             recipeSec.appendChild(n);
         }
     })
     .fail(function(msg){
         console.log(msg);
     });
+}
+
+function getRecipeInfo(id){
+    var request = $.ajax({
+        method: "POST",
+        url: "../controller/dbFunctionsController.php?state=getRecipe",
+        data: { recipeId: id }
+    })
+    .done(function(recipe) {
+        recipe = JSON.parse(recipe);
+        var n = document.createElement("div");
+        n.setAttribute("id", "recipeModalContainer");
+        n.innerHTML =`<div id="recipeModal" class="modal">
+        <div class="modal-content"><h4>${ recipe.title }</h4><p>${ recipe.instructions }</p></div>
+        <div class="modal-footer"><a onclick="closeModal('#recipeModalContainer')"href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a></div>
+        </div>`
+        var recipeSec = document.getElementById("recipeSection")
+        recipeSec.appendChild(n)      
+        $('.modal').modal();
+        $('#recipeModal').modal('open');
+    })
+    .fail(function(msg){
+        console.log(msg);
+    });
+}
+
+function closeModal(id){
+    $(id).remove();
 }

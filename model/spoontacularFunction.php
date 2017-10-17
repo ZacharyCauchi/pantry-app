@@ -14,6 +14,9 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
         $query = substr($query, 0, -1); 
         $url .= $query . '&limitLicense=false&number=10&ranking=2';
     }
+    else if($conditions['state'] == 'getRecipe'){
+        $url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" . $searchTerm . "/information?includeNutrition=false";
+    }
     $response = file_get_contents($url,false,$context);
     header('Content-Type: application/json');
     echo json_encode($response);

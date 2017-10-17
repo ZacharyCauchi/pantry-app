@@ -11,4 +11,7 @@ else if($_GET['state'] == 'ingredientSearch'){
 else if($_GET['state'] == 'recipeSearch'){
     spoontacularFunction($_POST['ingArr'], array('state' => 'recipeSearch'));
 }
+else if($_GET['state'] == 'getRecipe'){
+    spoontacularFunction($_POST['recipeId'], array('state' => 'getRecipe'));
+}
 ?>
