@@ -72,7 +72,6 @@ function ingredientPreview(search){
         })
         .done(function(ingredients) {
             var ingredients = JSON.parse(ingredients);
-            console.log(ingredients);
             var ingBox = document.getElementById("ingredientSearchList")
             ingBox.innerHTML = "";
             for(i = 0; i < ingredients.length; i++){
@@ -99,5 +98,19 @@ function addIngredient(name){
         n.className = "ingredientStyle card red lighten-3";
         ingredientSec.appendChild(n);
     }
+    recipeSearch(pantryList);
+}
 
+function recipeSearch(ingArr){
+    var request = $.ajax({
+    method: "POST",
+    url: "../controller/dbFunctionsController.php?state=recipeSearch",
+    data: { ingArr: ingArr }
+    })
+    .done(function(recipes) {
+        console.log(JSON.parse(recipes));
+    })
+    .fail(function(msg){
+        console.log(msg);
+    });
 }
