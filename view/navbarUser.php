@@ -1,5 +1,5 @@
 <div class="navBar">
-    <h1 onClick='scrollFunction3()'>Pantry Helper</h1>
+    <h1 onClick='scrollFunction3()'>Pantry Pal</h1>
     <div class="navItemsRight">
         <div class="navItem" onClick='scrollFunction1()'>
             Recipes

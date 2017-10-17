@@ -1,6 +1,6 @@
 <nav>
     <div class="navBar nav-wrapper">
-        <h1 onClick='scrollFunction3()'>Pantry Helper</h1>
+        <h1 onClick='scrollFunction3()'>Pantry Pal</h1>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li class="navItem" onClick='scrollFunction1()'>Recipes</li>

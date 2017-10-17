@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../view/materialize/js/materialize.min.js"></script>
     <script src='../view/js/script.js'></script>
-    <title>Pantry Helper</title>
+    <title>Pantry Pal</title>
 </head>
 <body id="body">
 <div id="modalBackground">
