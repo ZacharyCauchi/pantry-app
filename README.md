@@ -16,11 +16,15 @@ Developed using PHP and a sprinkle of JS, Pantry Helper is being made as my fina
 - [ ] Allow users to save ingredients
 - [ ] Let's be honest - most of the website's core functionality
 
+## Software
+
+- PHP 7.1.7
+
 ## Setup
 
-1. Download and import sql dump
-1. The expected database username is root and the password is left blank. This can be edited in model/dbconnection.php
-1. You should be good to go!
+1. import sql database
+2. The expected database username is root and the password is left blank. This can be edited in model/dbconnection.php
+3. You should be good to go!
 
 
 
