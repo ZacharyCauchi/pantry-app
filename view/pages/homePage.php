@@ -14,78 +14,78 @@
     <title>Pantry Pal</title>
 </head>
 <body id="body">
-<div id="loginModal" class="modal">
-    <div class="modal-content">
-        <h4>Login</h4>
-        <form action="../controller/loginController.php?state=login" method="POST">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="username" type="text" name="username"></input>
-                    <label for="username">Username</label>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <form action="../controller/loginController.php?state=login" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" name="username"></input>
+                        <label for="username">Username</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" name="password"></input>
-                    <label for="Password">Password</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="password"></input>
+                        <label for="Password">Password</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">done</i>
-                </button>
-            </div>
-        </form>
+                <div class="row">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">done</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="waves-effect waves-green btn-flat" onClick="switchToRegister()">Click here to register</div>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
-    <div class="modal-footer">
-        <div class="waves-effect waves-green btn-flat" onClick="switchToRegister()">Click here to register</div>
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h4>Register</h4>
+            <form action="../controller/loginController.php?state=registration" method="POST">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="firstName" type="text" name="firstName"></input>
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="lastName" type="text" name="lastName"></input>
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="text" name="email"></input>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" name="username"></input>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="password"></input>
+                        <label for="Password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">done</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="waves-effect waves-green btn-flat" onClick="switchToLogin()">Click here to login</div>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
-</div>
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <h4>Register</h4>
-    <form action="../controller/loginController.php?state=registration" method="POST">
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="firstName" type="text" name="firstName"></input>
-                <label for="firstName">First Name</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="lastName" type="text" name="lastName"></input>
-                <label for="lastName">Last Name</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="email" type="text" name="email"></input>
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="username" type="text" name="username"></input>
-                <label for="username">Username</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="password" type="password" name="password"></input>
-                <label for="Password">Password</label>
-            </div>
-        </div>
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">done</i>
-            </button>
-        </div>
-    </form>
-    </div>
-    <div class="modal-footer">
-        <div class="waves-effect waves-green btn-flat" onClick="switchToLogin()">Click here to login</div>
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
     <div class="header">
         <div class="headerSpacer">
         </div>
@@ -98,7 +98,6 @@
                     <li>Make great food!</li>
                 </ol>
             </h3>
-
         </div>
         <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?" onChange="ingredientPreview(this.value)"></input>
         <div id="ingredientSearchList">

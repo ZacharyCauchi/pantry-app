@@ -3,10 +3,12 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
     $opts = array('http'=>array('header' => 'X-Mashape-Key: j8WXEEslQQmshKa79XEbWBqgkWZgp1jOmTpjsnvFD4Ls46qndJ')); 
     $context = stream_context_create($opts);
     if($conditions['state'] == 'ingredientSearch'){
+        $searchTerm = str_replace(' ', '%20', $searchTerm);
         $url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/ingredients/autocomplete?metaInformation=false&number=10&query=' . $searchTerm;  
     }
     else if($conditions['state'] == 'recipeSearch'){
         $url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=';
+        $searchTerm = json_decode(str_replace(' ', '%20',  json_encode($searchTerm))); 
         $query = '';
         for ($i = 0; $i < count($searchTerm); $i++) {
             $query .= $searchTerm[$i] . ',';
