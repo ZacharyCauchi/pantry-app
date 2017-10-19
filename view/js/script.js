@@ -24,27 +24,14 @@ function scrollFunction3(){
     }, 1000);
 }
 
-function closeModal() {
-    document.getElementById("modalBackground").style.display = "none";
-}
-
-function loginModalOpen() {
-    document.getElementById("modalBackground").style.display = "flex";
-    document.getElementById("loginBox").style.display = "block";
-    document.getElementById("registrationBox").style.display = "none";
-    document.getElementById("updateDetailsBox").style.display = "none";
-}
-
 function switchToLogin() {
-    document.getElementById("loginBox").style.display = "block";
-    document.getElementById("registrationBox").style.display = "none";
-    document.getElementById("updateDetailsBox").style.display = "none";
+    $('#registerModal').modal('close');
+    $('#loginModal').modal('open');
 }
 
 function switchToRegister() {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("registrationBox").style.display = "block";
-    document.getElementById("updateDetailsBox").style.display = "none";
+    $('#loginModal').modal('close');
+    $('#registerModal').modal('open');
 }
 
 function showAccountUpdate(userID) {

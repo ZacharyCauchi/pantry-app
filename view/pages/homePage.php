@@ -14,41 +14,35 @@
     <title>Pantry Pal</title>
 </head>
 <body id="body">
-<div id="modalBackground">
-    <div class="loginBox" id="registrationBox">
-        <img src="../view/images/close.png" class="closeButton" onClick="closeModal()"></img>
-        <form action="../controller/loginController.php?state=registration" method="POST">
-            Register <br />
-            <div class="loginText">First Name:</div><input type="text" name="firstName" class="formInput"></input> <br />
-            <div class="loginText">Last Name:</div><input type="text" name="lastName" class="formInput"></input> <br />
-            <div class="loginText">Email:</div><input type="text" name="email" class="formInput"></input> <br />
-            <div class="loginText">Username:</div><input type="text" name="username" class="formInput"></input> <br />
-            <div class="loginText">Password:</div><input type="text" name="password" class="formInput"></input> <br />
-            <input type="submit" value="Submit" id="registrationSubmit">
-            <input type="button" value="Already a member? click here to login" onClick="switchToLogin()"></input>
-        </form>
-    </div>
-    <div class="loginBox" id="loginBox">
-        <img src="../view/images/close.png" class="closeButton" onClick="closeModal()"></img>
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h4>Login</h4>
         <form action="../controller/loginController.php?state=login" method="POST">
-            Login <br />
-            <div class="loginText">Username:</div><input type="text" name="username" class="formInput"></input>
-            <div class="loginText">Password:</div><input type="text" name="password" class="formInput"></input>
+            <div class="loginText">Username:</div><input type="text" name="username"></input>
+            <div class="loginText">Password:</div><input type="text" name="password"></input>
             <input type="submit" value="Submit" id="loginSubmit" class="loginButton">
-            <input type="button" value="Not a member? Click here to register" onClick="switchToRegister()"></input>
         </form>
     </div>
-    <div class="loginBox" id="updateDetailsBox">
-        <img src="../view/images/close.png" class="closeButton" onClick="closeModal()"></img>
-        <form action="loginController.php?state=updateDetails" method="POST">
-            Update your details Below <br />
-            <div class="loginText">First Name:</div><input type="text" name="updateFirstName" class="formInput" id="updateFirstName"></input> <br />
-            <div class="loginText">Last Name:</div><input type="text" name="updateLastName" class="formInput" id="updateLastName"></input> <br />
-            <div class="loginText">Email:</div><input type="text" name="updateEmail" class="formInput" id="updateEmail"></input> <br />
-            <div class="loginText">Username:</div><input type="text" name="updateUsername" class="formInput" id="updateUsername"></input> <br />
-            <div class="loginText">Password:</div><input type="text" name="updatePassword" class="formInput" id="updatePassword"></input> <br />
-            <input type="submit" value="Submit" id="updateDetailsSubmit">
-        </form>
+    <div class="modal-footer">
+        <div class="waves-effect waves-green btn-flat" onClick="switchToRegister()">Click here to register</div>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <h4>Register</h4>
+    <form action="../controller/loginController.php?state=registration" method="POST">
+        <div class="loginText">First Name:</div><input type="text" name="firstName"></input> <br />
+        <div class="loginText">Last Name:</div><input type="text" name="lastName"</input> <br />
+        <div class="loginText">Email:</div><input type="text" name="email"></input> <br />
+        <div class="loginText">Username:</div><input type="text" name="username"></input> <br />
+        <div class="loginText">Password:</div><input type="text" name="password"></input> <br />
+        <input type="submit" value="Submit" id="registrationSubmit">
+    </form>
+    </div>
+    <div class="modal-footer">
+        <div class="waves-effect waves-green btn-flat" onClick="switchToLogin()">Click here to login</div>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
 </div>
     <div class="header">
