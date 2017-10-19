@@ -18,9 +18,23 @@
     <div class="modal-content">
         <h4>Login</h4>
         <form action="../controller/loginController.php?state=login" method="POST">
-            <div class="loginText">Username:</div><input type="text" name="username"></input>
-            <div class="loginText">Password:</div><input type="text" name="password"></input>
-            <input type="submit" value="Submit" id="loginSubmit" class="loginButton">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" type="text" name="username"></input>
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" name="password"></input>
+                    <label for="Password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">done</i>
+                </button>
+            </div>
         </form>
     </div>
     <div class="modal-footer">
@@ -32,12 +46,39 @@
     <div class="modal-content">
         <h4>Register</h4>
     <form action="../controller/loginController.php?state=registration" method="POST">
-        <div class="loginText">First Name:</div><input type="text" name="firstName"></input> <br />
-        <div class="loginText">Last Name:</div><input type="text" name="lastName"</input> <br />
-        <div class="loginText">Email:</div><input type="text" name="email"></input> <br />
-        <div class="loginText">Username:</div><input type="text" name="username"></input> <br />
-        <div class="loginText">Password:</div><input type="text" name="password"></input> <br />
-        <input type="submit" value="Submit" id="registrationSubmit">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="firstName" type="text" name="firstName"></input>
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="lastName" type="text" name="lastName"></input>
+                <label for="lastName">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="text" name="email"></input>
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="username" type="text" name="username"></input>
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" name="password"></input>
+                <label for="Password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">done</i>
+            </button>
+        </div>
     </form>
     </div>
     <div class="modal-footer">
