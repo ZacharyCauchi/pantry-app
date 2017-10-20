@@ -12,16 +12,6 @@ if(isset($_GET['logout'])) {
     session_start();
     $_SESSION['failCount'] = 0;
 }
-
-if(isset($_SESSION['loggedIn'])){
-    if($_SESSION['loggedIn'] == 'user'){
-        include '../view/navbarUser.php';
-        include '../view/pages/homePage.php';
-    } else if($_SESSION['loggedIn'] == 'admin') {
-        include '../view/navbarAdmin.php';
-        include '../view/pages/adminPage.php';
-    }
-} 
 if(isset($_GET['state'])){
     if($_GET['state'] == 'login'){
         $user = $_POST["username"];
@@ -39,8 +29,17 @@ if(isset($_GET['state'])){
     } elseif($_GET['state'] == 'updateDetails'){
         updateFunction();
     }
-} 
-else {
+}
+
+if(isset($_SESSION['loggedIn'])){
+    if($_SESSION['loggedIn'] == 'user'){
+        include '../view/navbarUser.php';
+        include '../view/pages/homePage.php';
+    } else if($_SESSION['loggedIn'] == 'admin') {
+        include '../view/navbarAdmin.php';
+        include '../view/pages/adminPage.php';
+    }
+} else {
     if ($_SESSION['failCount'] > 50){
         echo 'Too many failed attempts, try again soon';
     } else {

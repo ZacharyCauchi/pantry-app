@@ -14,6 +14,7 @@
     <title>Pantry Pal</title>
 </head>
 <body id="body">
+
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h4>Login</h4>
@@ -42,6 +43,7 @@
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
+
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <h4>Register</h4>
@@ -86,6 +88,51 @@
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
+
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <h4>Register</h4>
+            <form action="../controller/loginController.php?state=updateDetails" method="POST">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="updateFirstName" type="text" name="updateFirstName"></input>
+                        <label for="updateFirstName">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="updateLastName" type="text" name="updateLastName"></input>
+                        <label for="updateLastName">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="updateEmail" type="text" name="updateEmail"></input>
+                        <label for="updateEmail">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="updateUsername" type="text" name="updateUsername"></input>
+                        <label for="updateUsername">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="updatePassword" type="password" name="updatePassword"></input>
+                        <label for="updatePassword">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">done</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
     <div class="header">
         <div class="headerSpacer">
         </div>
@@ -103,6 +150,7 @@
         <div id="ingredientSearchList">
         </div>
     </div>
+
     <div class="resultSection" id="resultID">
         <div id="recipeSection">
         </div>
@@ -112,9 +160,11 @@
     <div class="aboutSection" id="aboutID">
         <h4>This is the About section</h4>
     </div>
+
     <footer>
         <div class="footerText">This is the Footer</div>
         <?php if(isset($e)){echo $e;} ?>
     </footer>
+
 </body>
 </html>

@@ -47,10 +47,7 @@ function showAccountUpdate(userID) {
                 document.getElementById("updateEmail").value = userDetails['email'];
                 document.getElementById("updateUsername").value = userDetails['username'];
             });
-    document.getElementById("modalBackground").style.display = "flex";
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("registrationBox").style.display = "none";
-    document.getElementById("updateDetailsBox").style.display = "block";
+    $('#updateModal').modal('open');
 }
 
 /*Ingredient Search*/ 
