@@ -209,11 +209,6 @@ footer {
 }
 
 /* Like Button Style */
-.heart{
-fill: white;
-width: 90%;
-
-}
 
 .likeIcon:hover{
 animation: grow .4s forwards;
@@ -222,4 +217,20 @@ transform-origin: 50% 50%;
 
 @keyframes grow {
     100% {transform: scale(1.1, 1.1);}
+}
+
+.likeIcon{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likeButton {
+    width:  60%;
+    height: auto;
+}
+
+.recipeTitle {
+    width: 90%;
 }

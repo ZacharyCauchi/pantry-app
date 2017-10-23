@@ -1,0 +1,12 @@
+<svg width="100" height="87.00000000000001" xmlns="http://www.w3.org/2000/svg">
+ <title>heart</title>
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="26.691096" height="23.481254" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path d="m91.58293,8.41793a28.71,28.71 0 0 0 -40.58,0l-1,1l-1,-1a28.68,28.68 0 0 0 -40.61,40.56l1,1l25.85,25.86l0,0l6,6l0.1,0.11l2.56,2.57a8.63,8.63 0 0 0 12.17,0l2.37,-2.37l0,0l6.28,-6.28l0,0l25.83,-25.85l1,-1a28.64,28.64 0 0 0 0.03,-40.6z" id="svg_1" fill="#ffffff"/>
+ </g>
+</svg>
