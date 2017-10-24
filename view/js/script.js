@@ -110,7 +110,7 @@ function recipeSearch(ingArr){
             n2.appendChild(t);
             n.appendChild(n2)
             n.className = "recipeStyle card";
-            n.setAttribute("onClick", "getRecipeInfo(" + recipeList[i].id + ")");
+            n2.setAttribute("onClick", "getRecipeInfo(" + recipeList[i].id + ")");
             recipeSec.appendChild(n);
             var a = document.createElement("a");
             a.setAttribute("class", "btn-floating btn-large waves-effect waves-light red likeIcon");

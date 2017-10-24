@@ -91,7 +91,7 @@
 
     <div id="updateModal" class="modal">
         <div class="modal-content">
-            <h4>Register</h4>
+            <h4>Update your details</h4>
             <form action="../controller/loginController.php?state=updateDetails" method="POST">
                 <div class="row">
                     <div class="input-field col s6">

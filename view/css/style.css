@@ -233,4 +233,5 @@ transform-origin: 50% 50%;
 
 .recipeTitle {
     width: 90%;
+    cursor: pointer;
 }
