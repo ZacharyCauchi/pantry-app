@@ -1,6 +1,7 @@
 <?php
 include('../controller/loginFunction.php');
 include('../controller/registerFunction.php');
+include('../controller/inputFilter.php');
 include('../model/updateFunction.php');
 
 session_start();
@@ -14,16 +15,16 @@ if(isset($_GET['logout'])) {
 }
 if(isset($_GET['state'])){
     if($_GET['state'] == 'login'){
-        $user = $_POST["username"];
-        $pass = $_POST["password"];
+        $user = filter_var(inputCheck($_POST['username']), FILTER_SANITIZE_STRING);
+        $pass = filter_var(inputCheck($_POST['password']), FILTER_SANITIZE_STRING);
         loginFunction($user, $pass);
 
     } elseif($_GET['state'] == 'registration'){
-        $firstName = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $email = $_POST["email"];
-        $user = $_POST["username"];
-        $pass = $_POST["password"];
+        $firstName = filter_var(inputCheck($_POST['firstName']), FILTER_SANITIZE_STRING);
+        $lastName = filter_var(inputCheck($_POST['lastName']), FILTER_SANITIZE_STRING);
+        $email = filter_var(inputCheck($_POST['email']), FILTER_SANITIZE_STRING);
+        $user = filter_var(inputCheck($_POST['username']), FILTER_SANITIZE_STRING);
+        $pass = filter_var(inputCheck($_POST['password']), FILTER_SANITIZE_STRING);
         registerFunction($firstName, $lastName, $email, $user, $pass);
         
     } elseif($_GET['state'] == 'updateDetails'){

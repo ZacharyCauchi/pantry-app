@@ -10,8 +10,10 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
         $url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=';
         $searchTerm = json_decode(str_replace(' ', '%20',  json_encode($searchTerm))); 
         $query = '';
-        for ($i = 0; $i < count($searchTerm); $i++) {
-            $query .= $searchTerm[$i] . ',';
+        if(is_array($searchTerm) == true) {
+            for ($i = 0; $i < count($searchTerm); $i++) {
+                $query .= $searchTerm[$i] . ',';
+            }
         }
         $query = substr($query, 0, -1); 
         $url .= $query . '&limitLicense=false&number=10&ranking=2';

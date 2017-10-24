@@ -1,7 +1,7 @@
 <?php
 function loginFunction($user, $pass){
     include('../model/dbconnection.php');
-    $sql = "SELECT * FROM userDetails WHERE username = '" . $user . "'";
+    $sql = "SELECT * FROM userdetails WHERE username = '" . $user . "'";
     $res = $db->prepare($sql);
     $res->execute();
     $dbPassword = $res->fetch(PDO::FETCH_ASSOC);

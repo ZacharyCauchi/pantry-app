@@ -59,6 +59,7 @@ function ingredientPreview(search){
         data: { startsWith: search }
         })
         .done(function(ingredients) {
+            console.log(ingredients)
             var ingredients = JSON.parse(ingredients);
             var ingBox = document.getElementById("ingredientSearchList")
             ingBox.innerHTML = "";
