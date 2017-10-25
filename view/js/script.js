@@ -46,13 +46,17 @@ function showAccountUpdate(userID) {
                 document.getElementById("updateLastName").value = userDetails['lastName'];
                 document.getElementById("updateEmail").value = userDetails['email'];
                 document.getElementById("updateUsername").value = userDetails['username'];
+            })
+            .fail(function(msg){
+                console.log(msg);
             });
     $('#updateModal').modal('open');
 }
 
 /*Ingredient Search*/ 
 
-function ingredientPreview(search){
+function ingredientPreview(){
+    var search = document.getElementById("ingredientSearch").value;
     var request = $.ajax({
         method: "POST",
         url: "../controller/dbFunctionsController.php?state=ingredientSearch",
@@ -60,7 +64,7 @@ function ingredientPreview(search){
         })
         .done(function(ingredients) {
             console.log(ingredients)
-            var ingredients = JSON.parse(ingredients);
+            var ingredients = ingredients
             var ingBox = document.getElementById("ingredientSearchList")
             ingBox.innerHTML = "";
             for(i = 0; i < ingredients.length; i++){
@@ -87,6 +91,7 @@ function addIngredient(name){
         n.className = "ingredientStyle card red lighten-3";
         ingredientSec.appendChild(n);
     }
+    document.getElementById("ingredientSearchList").innerHTML = '';
     recipeSearch(pantryList);
 }
 
@@ -99,8 +104,8 @@ function recipeSearch(ingArr){
     data: { ingArr: ingArr }
     })
     .done(function(recipes) {
-        console.log(JSON.parse(recipes));
-        var recipeList = JSON.parse(recipes)
+        console.log(recipes);
+        var recipeList = recipes
         var recipeSec = document.getElementById("recipeSection")
         recipeSec.innerHTML = '';
         for(i = 0; i < recipeList.length; i++){
@@ -134,7 +139,7 @@ function getRecipeInfo(id){
         data: { recipeId: id }
     })
     .done(function(recipe) {
-        recipe = JSON.parse(recipe);
+        recipe = recipe;
         var n = document.createElement("div");
         n.setAttribute("id", "recipeModalContainer");
         n.innerHTML =`<div id="recipeModal" class="modal">

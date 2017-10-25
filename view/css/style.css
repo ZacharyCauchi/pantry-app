@@ -39,12 +39,22 @@ body {
     flex-direction: column;
 }
 
+#searchContainer{
+    width: 70%;
+    white-space: nowrap;
+    height: 80px;
+}
+
+#searchBut{
+    margin-bottom: 17px;
+}
+
 #ingredientSearch{
     padding: 2.5%;
     font-size: 3.5em;
     border-radius: 15px;
     height: 80px;
-    width: 70%;
+    width: 90%;
     font-family: 'mada';
     font-weight: 200;
     box-sizing: border-box;

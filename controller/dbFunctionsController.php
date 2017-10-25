@@ -4,11 +4,11 @@ include('../model/spoontacularFunction.php');
 include('../controller/inputFilter.php');
 
 if ($_GET['state'] == 'showUserDetails'){
-    $user = filter_var(inputCheck($_POST['username']), FILTER_SANITIZE_STRING);
+    $user = inputCheck($_POST['user']);
     selectFunction($user, array('state' => 'returnAll', 'table' => 'users'));
 }
 else if($_GET['state'] == 'ingredientSearch'){
-    $startsWith = filter_var(inputCheck($_POST['startsWith']), FILTER_SANITIZE_STRING);
+    $startsWith = inputCheck($_POST['startsWith']);
     spoontacularFunction($startsWith, array('state' => 'ingredientSearch'));
 }
 else if($_GET['state'] == 'recipeSearch'){
@@ -16,7 +16,7 @@ else if($_GET['state'] == 'recipeSearch'){
     spoontacularFunction($ingArr, array('state' => 'recipeSearch'));
 }
 else if($_GET['state'] == 'getRecipe'){
-    $recipeId = filter_var(inputCheck($_POST['recipeId']), FILTER_SANITIZE_STRING);
+    $recipeId = inputCheck($_POST['recipeId']);
     spoontacularFunction($recipeId, array('state' => 'getRecipe'));
 }
 ?>

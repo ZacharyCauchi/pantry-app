@@ -8,7 +8,7 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
     }
     else if($conditions['state'] == 'recipeSearch'){
         $url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=';
-        $searchTerm = json_decode(str_replace(' ', '%20',  json_encode($searchTerm))); 
+        $searchTerm = str_replace(' ', '%20', $searchTerm);
         $query = '';
         if(is_array($searchTerm) == true) {
             for ($i = 0; $i < count($searchTerm); $i++) {
@@ -23,6 +23,6 @@ function spoontacularFunction($searchTerm = array(), $conditions = array()){
     }
     $response = file_get_contents($url,false,$context);
     header('Content-Type: application/json');
-    echo json_encode($response);
+    echo $response;
 }
 ?>

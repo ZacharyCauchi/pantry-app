@@ -15,16 +15,16 @@ if(isset($_GET['logout'])) {
 }
 if(isset($_GET['state'])){
     if($_GET['state'] == 'login'){
-        $user = filter_var(inputCheck($_POST['username']), FILTER_SANITIZE_STRING);
-        $pass = filter_var(inputCheck($_POST['password']), FILTER_SANITIZE_STRING);
+        $user = inputCheck($_POST['username']);
+        $pass = inputCheck($_POST['password']);
         loginFunction($user, $pass);
 
     } elseif($_GET['state'] == 'registration'){
-        $firstName = filter_var(inputCheck($_POST['firstName']), FILTER_SANITIZE_STRING);
-        $lastName = filter_var(inputCheck($_POST['lastName']), FILTER_SANITIZE_STRING);
-        $email = filter_var(inputCheck($_POST['email']), FILTER_SANITIZE_STRING);
-        $user = filter_var(inputCheck($_POST['username']), FILTER_SANITIZE_STRING);
-        $pass = filter_var(inputCheck($_POST['password']), FILTER_SANITIZE_STRING);
+        $firstName = inputCheck($_POST['firstName']);
+        $lastName = inputCheck($_POST['lastName']);
+        $email = inputCheck($_POST['email']);
+        $user = inputCheck($_POST['username']);
+        $pass = inputCheck($_POST['password']);
         registerFunction($firstName, $lastName, $email, $user, $pass);
         
     } elseif($_GET['state'] == 'updateDetails'){

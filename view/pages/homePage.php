@@ -146,7 +146,12 @@
                 </ol>
             </h3>
         </div>
-        <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?" onChange="ingredientPreview(this.value)"></input>
+        <div id="searchContainer">
+        <input type="text" id="ingredientSearch" placeholder="What ingredients do you have on hand?"></input>
+            <button class="btn-floating btn-large waves-effect waves-light blue lighten-2" id="searchBut" type="submit" name="action" onClick="ingredientPreview()">
+                <i class="large material-icons">search</i>
+            </button>
+        </div>
         <div id="ingredientSearchList">
         </div>
     </div>
