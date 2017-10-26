@@ -1,5 +1,6 @@
 <?php
 include('../model/selectFunction.php');
+include('../model/insertFunction.php');
 include('../model/spoontacularFunction.php');
 include('../controller/inputFilter.php');
 
@@ -18,5 +19,9 @@ else if($_GET['state'] == 'recipeSearch'){
 else if($_GET['state'] == 'getRecipe'){
     $recipeId = inputCheck($_POST['recipeId']);
     spoontacularFunction($recipeId, array('state' => 'getRecipe'));
+}
+else if($_GET['state'] == 'likeRecipe'){
+    $recipeId = inputCheck($_POST['recipeId']);
+    insertFunction($recipeId, array('state' => 'likeRecipe'));
 }
 ?>

@@ -170,6 +170,17 @@ function likeFunction(){
         console.log(status)
         if(status == "yes"){
             console.log(likedRecipe)
+            var request2 = $.ajax({
+                method: "POST",
+                url: "../controller/dbFunctionsController.php?state=likeRecipe",
+                data: { recipeId: likedRecipe }
+            })
+            .done(function(msg){
+                console.log(msg);
+            })
+            .fail(function(msg){
+                console.log(msg);
+            });
         } else {
             console.log("you must log in to use this feature")
         }
