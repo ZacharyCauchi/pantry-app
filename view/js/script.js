@@ -1,10 +1,7 @@
 $(document).ready(function(){
     $('.modal').modal();
-  });
-
-$( document ).ready(function(){
     $(".button-collapse").sideNav();
-})
+  });
 
 function scrollFunction1(){
     $('html, body').animate({
@@ -88,7 +85,7 @@ function addIngredient(name){
         var n = document.createElement("div");
         var t = document.createTextNode(pantryList[i]);
         n.appendChild(t);
-        n.className = "ingredientStyle card red lighten-3";
+        n.className = "ingredientStyle card grey lighten-4";
         ingredientSec.appendChild(n);
     }
     document.getElementById("ingredientSearchList").innerHTML = '';
@@ -123,8 +120,11 @@ function recipeSearch(ingArr){
             var icon = document.createElement("img");
             icon.setAttribute("class", "likeButton");
             icon.setAttribute("src", "../view/images/heartIcon.svg");
+            icon.setAttribute("recipeKey", recipeList[i].id)
+            a.setAttribute("recipeKey", recipeList[i].id)
             a.appendChild(icon);
             n.appendChild(a);
+            a.addEventListener("click", likeFunction, false);
         }
     })
     .fail(function(msg){
@@ -158,4 +158,24 @@ function getRecipeInfo(id){
 
 function closeModal(id){
     $(id).remove();
+}
+
+function likeFunction(){
+    var likedRecipe = event.target.attributes.recipeKey.value
+    var request = $.ajax({
+        method: "POST",
+        url: "../controller/loginCheck.php"
+    })
+    .done(function(status) {
+        console.log(status)
+        if(status == "yes"){
+            console.log(likedRecipe)
+        } else {
+            console.log("you must log in to use this feature")
+        }
+        
+    })
+    .fail(function(msg){
+        console.log(msg);
+    });
 }
