@@ -143,6 +143,9 @@
         </div>
     </div>
 
+    <div id="recipeModalContainer">
+    </div>
+
     <div class="header">
         <div class="headerSpacer">
         </div>

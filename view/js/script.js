@@ -139,9 +139,8 @@ function getRecipeInfo(id){
         data: { recipeId: id }
     })
     .done(function(recipe) {
-        recipe = recipe;
-        var n = document.createElement("div");
-        n.setAttribute("id", "recipeModalContainer");
+        n = document.getElementById('recipeModalContainer')
+        n.innerHTML = '';
         n.innerHTML =`<div id="recipeModal" class="modal">
         <div class="modal-content"><h4>${ recipe.title }</h4><p>${ recipe.instructions }</p></div>
         <div class="modal-footer"><a onclick="closeModal('#recipeModalContainer')"href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a></div>
