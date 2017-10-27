@@ -6,12 +6,14 @@
             <li onClick='scrollFunction1()'><a><div class="navItem">Recipes</div></a></li>
             <li onClick='scrollFunction2()'><a><div class="navItem">About</div></a></li>
             <li onClick="showAccountUpdate(<?php echo $_SESSION['userID']; ?>)"><a><div class="navItem">Me</div></a></li>
+            <li onClick="showSavedRecipes(<?php echo $_SESSION['userID']; ?>)"><a><div class="navItem">Recipe Book</div></a></li>
             <li><a href="loginController.php?logout=true"><div class="navItem">Logout</div></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
         <li onClick='scrollFunction1()'><a><div class="navItem">Recipes</div></a></li>
         <li onClick='scrollFunction2()'><a><div class="navItem">About</div></a></li>
         <li onClick="showAccountUpdate(<?php echo $_SESSION['userID']; ?>)"><a><div class="navItem">Me</div></a></li>
+        <li onClick="showSavedRecipes(<?php echo $_SESSION['userID']; ?>)"><a><div class="navItem">Recipe Book</div></a></li>
         <li><a href="loginController.php?logout=true"><div class="navItem">Logout</div></a></li>
         </ul>               
     </div>

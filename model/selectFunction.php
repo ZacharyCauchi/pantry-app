@@ -4,15 +4,23 @@ function selectFunction($user, $conditions = array()){
     header('Content-Type: application/json');
     if(array_key_exists('state',$conditions)) {
         if($conditions['state'] == 'returnAll'){
-            $sql = 'SELECT firstName, lastName, email, username FROM ';
-            if($conditions['table'] == 'users'){
-                $sql = $sql . "userdetails WHERE userID = " . $user;
+            if($conditions['table'] == 'savedRecipes'){
+                $sql = 'SELECT savedRecipeID FROM ';
+                $sql = $sql . "savedrecipes WHERE userID = " . $user;
                 $res = $db->prepare($sql);
                 $res->execute();
-                $queryResults = $res->fetch(PDO::FETCH_ASSOC);
-                echo json_encode($queryResults);
+                $queryResults = $res->fetchAll(PDO::FETCH_ASSOC);
             }
         }
+        else if($conditions['table'] == 'users'){
+            $sql = 'SELECT firstName, lastName, email, username FROM ';
+            $sql = $sql . "userdetails WHERE userID = " . $user;
+            $res = $db->prepare($sql);
+            $res->execute();
+            $queryResults = $res->fetch(PDO::FETCH_ASSOC);
+        } 
+            echo json_encode($queryResults);
+        
     }
 }
 

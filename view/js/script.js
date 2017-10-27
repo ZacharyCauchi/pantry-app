@@ -160,6 +160,8 @@ function closeModal(id){
     $(id).remove();
 }
 
+/*Like Recipe*/
+
 function likeFunction(){
     var likedRecipe = event.target.attributes.recipeKey.value
     var request = $.ajax({
@@ -189,4 +191,50 @@ function likeFunction(){
     .fail(function(msg){
         console.log(msg);
     });
+}
+
+/*Show Liked Recipes */
+function showSavedRecipes(userID) {
+    var request = $.ajax({
+       method: "POST",
+       url: "../controller/dbFunctionsController.php?state=showSavedRecipes",
+       data: { user: userID }
+       })
+       .done(function(recipes) {
+           console.log(recipes)
+           var modal = document.getElementById('myRecipesContent');
+           modal.innerHTML = '';
+           var h4 = document.createElement("h4");
+           var h4t =document.createTextNode("My Recipe Book");
+           h4.appendChild(h4t);
+           modal.appendChild(h4);
+           for(i=0;i < recipes.length; i++){
+                var request2 = $.ajax({
+                    method: "POST",
+                    url: "../controller/dbFunctionsController.php?state=getRecipe",
+                    data: { recipeId: recipes[i].savedRecipeID }
+                    })
+                        .done(function(recipeInfo){
+                            console.log(recipeInfo);
+                            var n = document.createElement("div");
+                            n.setAttribute("class", "row likedRecipeStyle card");
+                            var h4 = document.createElement("h4");
+                            var t = document.createTextNode(recipeInfo.title);
+                            var p = document.createElement("p");
+                            var t2 = document.createTextNode(recipeInfo.instructions);
+                            h4.appendChild(t);
+                            p.appendChild(t2);
+                            n.appendChild(h4)
+                            n.appendChild(p);
+                            modal.appendChild(n);
+                    })
+                        .fail(function(msg){
+                            console.log(msg);
+                    });
+           }
+           $('#myRecipesModal').modal('open');
+       })
+       .fail(function(msg){
+           console.log(msg);
+       });
 }

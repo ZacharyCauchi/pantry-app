@@ -6,7 +6,7 @@ include('../controller/inputFilter.php');
 
 if ($_GET['state'] == 'showUserDetails'){
     $user = inputCheck($_POST['user']);
-    selectFunction($user, array('state' => 'returnAll', 'table' => 'users'));
+    selectFunction($user, array('state' => 'return', 'table' => 'users'));
 }
 else if($_GET['state'] == 'ingredientSearch'){
     $startsWith = inputCheck($_POST['startsWith']);
@@ -23,5 +23,9 @@ else if($_GET['state'] == 'getRecipe'){
 else if($_GET['state'] == 'likeRecipe'){
     $recipeId = inputCheck($_POST['recipeId']);
     insertFunction($recipeId, array('state' => 'likeRecipe'));
+}
+else if ($_GET['state'] == 'showSavedRecipes'){
+    $user = inputCheck($_POST['user']);
+    selectFunction($user, array('state' => 'returnAll', 'table' => 'savedRecipes'));
 }
 ?>

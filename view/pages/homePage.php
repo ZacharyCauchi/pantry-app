@@ -133,6 +133,16 @@
         </div>
     </div>
 
+    <div id="myRecipesModal" class="modal">
+        <div class="modal-content" id="myRecipesContent">
+            <div class="row">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
     <div class="header">
         <div class="headerSpacer">
         </div>
