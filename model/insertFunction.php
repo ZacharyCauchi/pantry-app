@@ -5,7 +5,7 @@ function insertFunction($values = array(), $conditions = array()){
     $sql = 'INSERT INTO ';
     if(array_key_exists('state', $conditions)) {
        if($conditions['state'] == 'likeRecipe'){
-            $sql = $sql . 'savedRecipes (savedRecipeId, userId) VALUES(' . $values . ', ' . $_SESSION['userID'] . ')';
+            $sql = $sql . 'savedrecipes (savedRecipeId, userId) VALUES(' . $values . ', ' . $_SESSION['userID'] . ')';
             $res = $db->prepare($sql);
             $res->execute();
             echo "success";

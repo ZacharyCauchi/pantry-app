@@ -1,6 +1,9 @@
 $(document).ready(function(){
     $('.modal').modal();
     $(".button-collapse").sideNav();
+    var pantryList = JSON.parse(localStorage.getItem('pantry'));
+    console.log(pantryList)
+    updateIngredientList(pantryList);
   });
 
 function scrollFunction1(){
@@ -76,9 +79,15 @@ function ingredientPreview(){
 }
 
 function addIngredient(name){
+    var pantryList = JSON.parse(localStorage.getItem('pantry'));
     pantryList = ( typeof pantryList != 'undefined' && pantryList instanceof Array ) ? pantryList : [];
     pantryList.push(name);
+    localStorage.setItem('pantry', JSON.stringify(pantryList));
     console.log(pantryList);
+    updateIngredientList(pantryList);
+}
+
+function updateIngredientList(pantryList){
     var ingredientSec = document.getElementById("ingredientSection")
     ingredientSec.innerHTML = '';
     for(i = 0; i < pantryList.length; i++){
