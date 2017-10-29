@@ -96,9 +96,30 @@ function updateIngredientList(pantryList){
         n.appendChild(t);
         n.className = "ingredientStyle card grey lighten-4";
         ingredientSec.appendChild(n);
+        var a = document.createElement("a");
+        a.setAttribute("class", "btn-floating waves-effect waves-light red ingRemoveBut");
+        var icon = document.createElement("i")
+        icon.setAttribute("class", "material-icons");
+        iText = document.createTextNode("remove_circle_outline");
+        icon.setAttribute("ingKey", i)
+        a.setAttribute("ingKey", i)
+        a.addEventListener("click", removeIng, false);
+        icon.appendChild(iText);
+        a.appendChild(icon);
+        n.appendChild(t);
+        n.appendChild(a)
     }
     document.getElementById("ingredientSearchList").innerHTML = '';
     recipeSearch(pantryList);
+}
+
+function removeIng(){
+    var x = event.target.attributes.ingKey.value
+    var pantryList = JSON.parse(localStorage.getItem('pantry'));
+    pantryList.splice(x, 1);
+    localStorage.setItem('pantry', JSON.stringify(pantryList));
+    updateIngredientList(pantryList);
+
 }
 
 /* Recipe Search */
