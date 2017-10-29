@@ -46,6 +46,7 @@ function showAccountUpdate(userID) {
                 document.getElementById("updateLastName").value = userDetails['lastName'];
                 document.getElementById("updateEmail").value = userDetails['email'];
                 document.getElementById("updateUsername").value = userDetails['username'];
+                Materialize.updateTextFields();
             })
             .fail(function(msg){
                 console.log(msg);
@@ -142,7 +143,7 @@ function recipeSearch(ingArr){
             n2.setAttribute("class", "recipeTitle");
             n2.appendChild(t);
             n.appendChild(n2)
-            n.className = "recipeStyle card";
+            n.className = "recipeStyle card grey lighten-5";
             n2.setAttribute("onClick", "getRecipeInfo(" + recipeList[i].id + ")");
             recipeSec.appendChild(n);
             var a = document.createElement("a");
@@ -168,17 +169,45 @@ function getRecipeInfo(id){
         url: "../controller/dbFunctionsController.php?state=getRecipe",
         data: { recipeId: id }
     })
-    .done(function(recipe) {
-        n = document.getElementById('recipeModalContainer')
-        n.innerHTML = '';
-        n.innerHTML =`<div id="recipeModal" class="modal">
-        <div class="modal-content"><h4>${ recipe.title }</h4><p>${ recipe.instructions }</p></div>
-        <div class="modal-footer"><a onclick="closeModal('#recipeModalContainer')"href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a></div>
-        </div>`
-        var recipeSec = document.getElementById("recipeSection")
-        recipeSec.appendChild(n)      
+    .done(function(recipeInfo) {
+        modal = document.getElementById('recipeModal')
+        modal.innerHTML = '';
+        var n = document.createElement("div");
+        n.setAttribute("class", "row likedRecipeStyle card grey lighten-3");
+        var h4 = document.createElement("h4");
+        var t = document.createTextNode(recipeInfo.title);
+        var recipeRow = document.createElement("div");
+        recipeRow.setAttribute("class", "row")
+        var p1 = document.createElement("p");
+        p1.setAttribute("class", "col s8")
+        var p2 = document.createElement("p");
+        p2.setAttribute("class", "col s4")
+        var ol1 = document.createElement("ol")
+        for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
+            var li = document.createElement("li")
+            li.setAttribute("class", "listItem")
+            var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
+            li.appendChild(text)
+            ol1.appendChild(li)
+        }
+        var ol2 = document.createElement("ol")
+        for(i = 0; i < recipeInfo.extendedIngredients.length; i++){
+            var li = document.createElement("li")
+            li.setAttribute("class", "listItem")
+            var text = document.createTextNode(recipeInfo.extendedIngredients[i].originalString);
+            li.appendChild(text)
+            ol2.appendChild(li)
+        }
+        h4.appendChild(t);
+        p1.appendChild(ol1);
+        p2.appendChild(ol2);
+        recipeRow.appendChild(p2)
+        recipeRow.appendChild(p1)
+        n.appendChild(h4)
+        n.appendChild(recipeRow);
+        modal.appendChild(n);    
         $('.modal').modal();
-        $('#recipeModal').modal('open');
+        $('#recipeModalContainer').modal('open');
     })
     .fail(function(msg){
         console.log(msg);
@@ -246,15 +275,38 @@ function showSavedRecipes(userID) {
                         .done(function(recipeInfo){
                             console.log(recipeInfo);
                             var n = document.createElement("div");
-                            n.setAttribute("class", "row likedRecipeStyle card");
+                            n.setAttribute("class", "row likedRecipeStyle card grey lighten-3");
                             var h4 = document.createElement("h4");
                             var t = document.createTextNode(recipeInfo.title);
-                            var p = document.createElement("p");
-                            var t2 = document.createTextNode(recipeInfo.instructions);
+                            var recipeRow = document.createElement("div");
+                            recipeRow.setAttribute("class", "row")
+                            var p1 = document.createElement("p");
+                            p1.setAttribute("class", "col s8")
+                            var p2 = document.createElement("p");
+                            p2.setAttribute("class", "col s4")
+                            var ol1 = document.createElement("ol")
+                            for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
+                                var li = document.createElement("li")
+                                li.setAttribute("class", "listItem")
+                                var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
+                                li.appendChild(text)
+                                ol1.appendChild(li)
+                            }
+                            var ol2 = document.createElement("ol")
+                            for(i = 0; i < recipeInfo.extendedIngredients.length; i++){
+                                var li = document.createElement("li")
+                                li.setAttribute("class", "listItem")
+                                var text = document.createTextNode(recipeInfo.extendedIngredients[i].originalString);
+                                li.appendChild(text)
+                                ol2.appendChild(li)
+                            }
                             h4.appendChild(t);
-                            p.appendChild(t2);
+                            p1.appendChild(ol1);
+                            p2.appendChild(ol2);
+                            recipeRow.appendChild(p2)
+                            recipeRow.appendChild(p1)
                             n.appendChild(h4)
-                            n.appendChild(p);
+                            n.appendChild(recipeRow);
                             modal.appendChild(n);
                     })
                         .fail(function(msg){
