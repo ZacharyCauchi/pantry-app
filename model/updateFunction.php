@@ -1,6 +1,6 @@
 <?php
 function updateFunction(){
-    include('../model/dbconnection.php');
+    include('model/dbconnection.php');
     $sql1 = "UPDATE userDetails SET ";
     if(isset($_POST['updateFirstName'])){
         if($_POST['updateFirstName'] != ''){

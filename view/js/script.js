@@ -37,7 +37,7 @@ function switchToRegister() {
 function showAccountUpdate(userID) {
          var request = $.ajax({
             method: "POST",
-            url: "../controller/dbFunctionsController.php?state=showUserDetails",
+            url: "controller/dbFunctionsController.php?state=showUserDetails",
             data: { user: userID }
             })
             .done(function(userDetails) {
@@ -60,7 +60,7 @@ function ingredientPreview(){
     var search = document.getElementById("ingredientSearch").value;
     var request = $.ajax({
         method: "POST",
-        url: "../controller/dbFunctionsController.php?state=ingredientSearch",
+        url: "controller/dbFunctionsController.php?state=ingredientSearch",
         data: { startsWith: search }
         })
         .done(function(ingredients) {
@@ -128,7 +128,7 @@ function removeIng(){
 function recipeSearch(ingArr){
     var request = $.ajax({
     method: "POST",
-    url: "../controller/dbFunctionsController.php?state=recipeSearch",
+    url: "controller/dbFunctionsController.php?state=recipeSearch",
     data: { ingArr: ingArr }
     })
     .done(function(recipes) {
@@ -150,7 +150,7 @@ function recipeSearch(ingArr){
             a.setAttribute("class", "btn-floating btn-large waves-effect waves-light red likeIcon");
             var icon = document.createElement("img");
             icon.setAttribute("class", "likeButton");
-            icon.setAttribute("src", "../view/images/heartIcon.svg");
+            icon.setAttribute("src", "view/images/heartIcon.svg");
             icon.setAttribute("recipeKey", recipeList[i].id)
             a.setAttribute("recipeKey", recipeList[i].id)
             a.appendChild(icon);
@@ -166,10 +166,11 @@ function recipeSearch(ingArr){
 function getRecipeInfo(id){
     var request = $.ajax({
         method: "POST",
-        url: "../controller/dbFunctionsController.php?state=getRecipe",
+        url: "controller/dbFunctionsController.php?state=getRecipe",
         data: { recipeId: id }
     })
     .done(function(recipeInfo) {
+        console.log(recipeInfo)
         modal = document.getElementById('recipeModal')
         modal.innerHTML = '';
         var n = document.createElement("div");
@@ -182,13 +183,19 @@ function getRecipeInfo(id){
         p1.setAttribute("class", "col s8")
         var p2 = document.createElement("p");
         p2.setAttribute("class", "col s4")
-        var ol1 = document.createElement("ol")
-        for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
-            var li = document.createElement("li")
-            li.setAttribute("class", "listItem")
-            var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
-            li.appendChild(text)
-            ol1.appendChild(li)
+        if(recipeInfo.analyzedInstructions.length != 0){ //we're checking if this particular Recipe has the instructions in a nice list for us, and not a string of text
+            var ol1 = document.createElement("ol")
+            for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
+                var li = document.createElement("li")
+                li.setAttribute("class", "listItem")
+                var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
+                li.appendChild(text)
+                ol1.appendChild(li)
+            }
+            p1.appendChild(ol1);
+        } else { //if they don't have the instructions ordered, just grab the string of text
+            var instructions = document.createTextNode(recipeInfo.instructions)
+            p1.appendChild(instructions)
         }
         var ol2 = document.createElement("ol")
         for(i = 0; i < recipeInfo.extendedIngredients.length; i++){
@@ -199,7 +206,6 @@ function getRecipeInfo(id){
             ol2.appendChild(li)
         }
         h4.appendChild(t);
-        p1.appendChild(ol1);
         p2.appendChild(ol2);
         recipeRow.appendChild(p2)
         recipeRow.appendChild(p1)
@@ -224,7 +230,7 @@ function likeFunction(){
     var likedRecipe = event.target.attributes.recipeKey.value
     var request = $.ajax({
         method: "POST",
-        url: "../controller/loginCheck.php"
+        url: "controller/loginCheck.php"
     })
     .done(function(status) {
         console.log(status)
@@ -232,7 +238,7 @@ function likeFunction(){
             console.log(likedRecipe)
             var request2 = $.ajax({
                 method: "POST",
-                url: "../controller/dbFunctionsController.php?state=likeRecipe",
+                url: "controller/dbFunctionsController.php?state=likeRecipe",
                 data: { recipeId: likedRecipe }
             })
             .done(function(msg){
@@ -255,7 +261,7 @@ function likeFunction(){
 function showSavedRecipes(userID) {
     var request = $.ajax({
        method: "POST",
-       url: "../controller/dbFunctionsController.php?state=showSavedRecipes",
+       url: "controller/dbFunctionsController.php?state=showSavedRecipes",
        data: { user: userID }
        })
        .done(function(recipes) {
@@ -269,7 +275,7 @@ function showSavedRecipes(userID) {
            for(i=0;i < recipes.length; i++){
                 var request2 = $.ajax({
                     method: "POST",
-                    url: "../controller/dbFunctionsController.php?state=getRecipe",
+                    url: "controller/dbFunctionsController.php?state=getRecipe",
                     data: { recipeId: recipes[i].savedRecipeID }
                     })
                         .done(function(recipeInfo){
@@ -284,13 +290,19 @@ function showSavedRecipes(userID) {
                             p1.setAttribute("class", "col s8")
                             var p2 = document.createElement("p");
                             p2.setAttribute("class", "col s4")
-                            var ol1 = document.createElement("ol")
-                            for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
-                                var li = document.createElement("li")
-                                li.setAttribute("class", "listItem")
-                                var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
-                                li.appendChild(text)
-                                ol1.appendChild(li)
+                            if(recipeInfo.analyzedInstructions.length != 0){ //we're checking if this particular Recipe has the instructions in a nice list for us, and not a string of text
+                                var ol1 = document.createElement("ol")
+                                for(i = 0; i < recipeInfo.analyzedInstructions[0].steps.length; i++){
+                                    var li = document.createElement("li")
+                                    li.setAttribute("class", "listItem")
+                                    var text = document.createTextNode(recipeInfo.analyzedInstructions[0].steps[i].step);
+                                    li.appendChild(text)
+                                    ol1.appendChild(li)
+                                }
+                                p1.appendChild(ol1);
+                            } else { //if they don't have the instructions ordered, just grab the string of text
+                                var instructions = document.createTextNode(recipeInfo.instructions)
+                                p1.appendChild(instructions)
                             }
                             var ol2 = document.createElement("ol")
                             for(i = 0; i < recipeInfo.extendedIngredients.length; i++){
@@ -301,7 +313,6 @@ function showSavedRecipes(userID) {
                                 ol2.appendChild(li)
                             }
                             h4.appendChild(t);
-                            p1.appendChild(ol1);
                             p2.appendChild(ol2);
                             recipeRow.appendChild(p2)
                             recipeRow.appendChild(p1)

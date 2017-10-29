@@ -1,6 +1,6 @@
 <div class="modalBackground">
     <div id="loginBox">
-    <form action="../controller/loginController.php?state=login" method="POST">
+    <form action="index.php?state=login" method="POST">
         <h2>Login</h2>
             <div class="loginText">Username:</div><input type="text" name="username"></input> <br />
             <div class="loginText">Password:</div><input type="text" name="password"></input> <br />

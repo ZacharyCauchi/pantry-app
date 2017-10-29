@@ -1,6 +1,6 @@
 <?php
 function loginFunction($user, $pass){
-    include('../model/dbconnection.php');
+    include('model/dbconnection.php');
     $sql = "SELECT * FROM userdetails WHERE username = '" . $user . "'";
     $res = $db->prepare($sql);
     $res->execute();
@@ -9,15 +9,15 @@ function loginFunction($user, $pass){
         if($dbPassword['role'] == 'admin'){
             $_SESSION['loggedIn'] = $dbPassword['role'];
             $_SESSION['userID'] = $dbPassword['userID'];
-            header('Location:loginController.php?state=a');
+            header('Location:index.php?state=a');
         } else {
             $_SESSION['loggedIn'] = 'user';
             $_SESSION['userID'] = $dbPassword['userID'];
-            header("Location:loginController.php");
+            header("Location:index.php");
         }
     } else {
         $_SESSION['failCount'] = $_SESSION['failCount'] + 1;
-        header('Location:loginController.php');
+        header('Location:index.php');
     }
 }
 ?>

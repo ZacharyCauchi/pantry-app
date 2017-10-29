@@ -4,7 +4,7 @@
         <div class="navItem" onClick="showAccountUpdateAdmin(<?php echo $_SESSION['userID']; ?>)">
             Me
         </div>
-        <a href="loginController.php?logout=true"><div class="navItem">
+        <a href="index.php?logout=true"><div class="navItem">
             Logout
         </div></a>
     </div>            

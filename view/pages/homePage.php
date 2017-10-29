@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../view/materialize/css/materialize.css">
+    <link rel="stylesheet" href="view/materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../view/css/style.css">
+    <link rel="stylesheet" href="view/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mada:200,400" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../view/materialize/js/materialize.min.js"></script>
-    <script src='../view/js/script.js'></script>
+    <script type="text/javascript" src="view/materialize/js/materialize.min.js"></script>
+    <script src='view/js/script.js'></script>
     <title>Pantry Pal</title>
 </head>
 <body id="body">
@@ -18,7 +18,7 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h4>Login</h4>
-            <form action="../controller/loginController.php?state=login" method="POST">
+            <form action="index.php?state=login" method="POST">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="username" type="text" name="username"></input>
@@ -47,7 +47,7 @@
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <h4>Register</h4>
-            <form action="../controller/loginController.php?state=registration" method="POST">
+            <form action="index.php?state=registration" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="firstName" type="text" name="firstName"></input>
@@ -92,7 +92,7 @@
     <div id="updateModal" class="modal">
         <div class="modal-content">
             <h4>Update your details</h4>
-            <form action="../controller/loginController.php?state=updateDetails" method="POST">
+            <form action="index.php?state=updateDetails" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="updateFirstName" type="text" name="updateFirstName"></input>

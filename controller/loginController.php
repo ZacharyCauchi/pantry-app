@@ -1,8 +1,8 @@
 <?php
-include('../controller/loginFunction.php');
-include('../controller/registerFunction.php');
-include('../controller/inputFilter.php');
-include('../model/updateFunction.php');
+include('controller/loginFunction.php');
+include('controller/registerFunction.php');
+include('controller/inputFilter.php');
+include('model/updateFunction.php');
 
 session_start();
 if(!isset($_SESSION['failCount'])){
@@ -34,18 +34,18 @@ if(isset($_GET['state'])){
 
 if(isset($_SESSION['loggedIn'])){
     if($_SESSION['loggedIn'] == 'user'){
-        include '../view/navbarUser.php';
-        include '../view/pages/homePage.php';
+        include 'view/navbarUser.php';
+        include 'view/pages/homePage.php';
     } else if($_SESSION['loggedIn'] == 'admin') {
-        include '../view/navbarAdmin.php';
-        include '../view/pages/adminPage.php';
+        include 'view/navbarAdmin.php';
+        include 'view/pages/adminPage.php';
     }
 } else {
     if ($_SESSION['failCount'] > 50){
         echo 'Too many failed attempts, try again soon';
     } else {
-    include '../view/navbarAnonymous.php';
-    include '../view/pages/homePage.php';
+    include 'view/navbarAnonymous.php';
+    include 'view/pages/homePage.php';
     }    
 }
 ?>
