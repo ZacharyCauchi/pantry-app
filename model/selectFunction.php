@@ -13,7 +13,7 @@ function selectFunction($user, $conditions = array()){
             }
         }
         else if($conditions['table'] == 'users'){
-            $sql = 'SELECT firstName, lastName, email, username FROM ';
+            $sql = 'SELECT firstName, lastName, email, username, profileImage FROM ';
             $sql = $sql . "userdetails WHERE userID = " . $user;
             $res = $db->prepare($sql);
             $res->execute();

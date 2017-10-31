@@ -48,7 +48,7 @@
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <h4>Register</h4>
-            <form action="index.php?state=registration" method="POST">
+            <form action="index.php?state=registration" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="firstName" type="text" name="firstName" class="registerInput validate" pattern="[a-zA-Z0-9]+"></input>
@@ -69,6 +69,17 @@
                     <div class="input-field col s12">
                         <input id="username" type="text" name="username" class="registerInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
                         <label for="username" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Image</span>
+                            <input type="file" name="fileToUpload">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Upload a Profile Picture">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -98,7 +109,10 @@
 
     <div id="updateModal" class="modal">
         <div class="modal-content">
-            <h4>Update your details</h4>
+            <div id="updateDetailsHeading">
+                <img id="profileImageHeading" class="responsive-img circle"></img>
+                <h4 id="updateHeading"> Update your details</h4>
+            </div>
             <form action="index.php?state=updateDetails" method="POST">
                 <div class="row">
                     <div class="input-field col s6">

@@ -46,6 +46,7 @@ function showAccountUpdate(userID) {
                 document.getElementById("updateLastName").value = userDetails['lastName'];
                 document.getElementById("updateEmail").value = userDetails['email'];
                 document.getElementById("updateUsername").value = userDetails['username'];
+                document.getElementById("profileImageHeading").src = "../../uploads/" + userDetails['profileImage'];
                 Materialize.updateTextFields();
             })
             .fail(function(msg){

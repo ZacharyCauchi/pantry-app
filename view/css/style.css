@@ -111,6 +111,24 @@ h3 {
     padding: 10px;
 
 }
+
+#updateDetailsHeading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    margin-bottom: 20;
+}
+
+#updateHeading{
+    margin: 0;
+    padding-left: 2%;
+    white-space: nowrap;
+}
+
+#profileImageHeading{
+    height: 3.5rem;
+}
 /* Header Styling End */
 
 /* Results Styling */
