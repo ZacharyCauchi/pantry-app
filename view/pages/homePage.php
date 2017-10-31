@@ -51,34 +51,40 @@
             <form action="index.php?state=registration" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="firstName" type="text" name="firstName"></input>
-                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" name="firstName" class="registerInput validate" pattern="[a-zA-Z0-9]+"></input>
+                        <label for="firstName" data-error="your last name must be alphanumeric">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="lastName" type="text" name="lastName"></input>
-                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" name="lastName" class="registerInput validate"  pattern="[a-zA-Z0-9]+"></input>
+                        <label for="lastName" data-error="your last name must be alphanumeric">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="text" name="email"></input>
-                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" class="registerInput validate"></input>
+                        <label for="email" data-error="Please eneter a valid email address">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" name="username"></input>
-                        <label for="username">Username</label>
+                        <input id="username" type="text" name="username" class="registerInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
+                        <label for="username" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" name="password"></input>
-                        <label for="Password">Password</label>
+                        <input id="registerPassword" type="password" name="password" class="registerInput validate" pattern=".{8,}"></input>
+                        <label for="registerPassword" data-error="Password must have at least 8 characters">Password</label>
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <div class="input-field col s12">
+                        <input id="repeatPassword" type="password" name="password" class="registerInput validate" pattern=".{8,}"></input>
+                        <label for="repeatPassword" data-error="Please repeat your password">Repeat Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button disabled id="registerSubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">done</i>
                     </button>
                 </div>
@@ -96,34 +102,40 @@
             <form action="index.php?state=updateDetails" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="updateFirstName" type="text" name="updateFirstName"></input>
-                        <label for="updateFirstName">First Name</label>
+                        <input id="updateFirstName" type="text" name="updateFirstName" class="updateInput validate" pattern="[a-zA-Z0-9]+"></input>
+                        <label for="updateFirstName" data-error="your first name must be alphanumeric">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="updateLastName" type="text" name="updateLastName"></input>
-                        <label for="updateLastName">Last Name</label>
+                        <input id="updateLastName" type="text" name="updateLastName" class="updateInput validate" pattern="[a-zA-Z0-9]+"></input>
+                        <label for="updateLastName" data-error="your last name must be alphanumeric">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="updateEmail" type="text" name="updateEmail"></input>
-                        <label for="updateEmail">Email</label>
+                        <input id="updateEmail" type="email" name="updateEmail" class="updateInput validate"></input>
+                        <label for="updateEmail" data-error="Please eneter a valid email address">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="updateUsername" type="text" name="updateUsername"></input>
-                        <label for="updateUsername">Username</label>
+                        <input id="updateUsername" type="text" name="updateUsername" class="updateInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
+                        <label for="updateUsername" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="updatePassword" type="password" name="updatePassword"></input>
-                        <label for="updatePassword">Password</label>
+                        <input id="updatePassword" type="password" name="updatePassword" class="updateInput validate" pattern=".{8,}"></input>
+                        <label for="updatePassword" data-error="Password must have at least 8 characters">Password</label>
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <div class="input-field col s12">
+                        <input id="updateRepeatPassword" type="password" name="password" class="updateInput validate" pattern=".{8,}"></input>
+                        <label for="updateRepeatPassword" data-error="Please repeat your password">Repeat Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button disabled id="updateSubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">done</i>
                     </button>
                 </div>
