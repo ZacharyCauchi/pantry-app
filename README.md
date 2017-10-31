@@ -26,6 +26,7 @@ Developed using PHP and a sprinkle of JS, Pantry Pal is being made as my final p
 
 1. import sql database
 2. The expected database username is root and the password is left blank. This can be edited in model/dbconnection.php
+1. The apiKey.php file is ignored and will need to be replaced. This is file contains the api key saved as a string and assigned to the variable $key
 3. You should be good to go!
 
 
