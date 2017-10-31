@@ -1,6 +1,7 @@
 <?php
 function spoontacularFunction($searchTerm = array(), $conditions = array()){
-    $opts = array('http'=>array('header' => 'X-Mashape-Key: j8WXEEslQQmshKa79XEbWBqgkWZgp1jOmTpjsnvFD4Ls46qndJ')); 
+    include('apiKey.php');
+    $opts = array('http'=>array('header' => 'X-Mashape-Key: ' . $key)); 
     $context = stream_context_create($opts);
     if($conditions['state'] == 'ingredientSearch'){
         $searchTerm = str_replace(' ', '%20', $searchTerm);
