@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="view/materialize/js/materialize.min.js"></script>
     <script src='view/js/script.js'></script>
+    <script src='view/js/validation.js'></script>
     <title>Pantry Pal</title>
 </head>
 <body id="body">
@@ -21,18 +22,18 @@
             <form action="index.php?state=login" method="POST">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" name="username"></input>
-                        <label for="username">Username</label>
+                        <input id="username" type="text" name="username" class="loginInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
+                        <label for="username" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" name="password"></input>
-                        <label for="Password">Password</label>
+                        <input id="password" type="password" name="password" class="loginInput validate" pattern=".{8,}"></input>
+                        <label for="Password" data-error="Password must have at least 8 characters">Password</label>
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <button disabled id="loginSubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">done</i>
                     </button>
                 </div>
