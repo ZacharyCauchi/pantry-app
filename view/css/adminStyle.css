@@ -1,0 +1,8 @@
+#adminSection{
+    width: 100%;
+    min-height: 800px;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

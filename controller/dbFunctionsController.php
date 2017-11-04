@@ -6,7 +6,11 @@ include('../controller/inputFilter.php');
 
 if ($_GET['state'] == 'showUserDetails'){
     $user = inputCheck($_POST['user']);
-    selectFunction($user, array('state' => 'return', 'table' => 'users'));
+    selectFunction($user, array('state' => 'returnOne', 'table' => 'users'));
+}
+else if($_GET['state'] == 'showUserDetailsAdmin'){
+    $user = '';
+    selectFunction($user, array('state' => 'returnAll', 'table' => 'users'));
 }
 else if($_GET['state'] == 'ingredientSearch'){
     $startsWith = inputCheck($_POST['startsWith']);
