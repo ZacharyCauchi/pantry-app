@@ -1,8 +1,35 @@
 #adminSection{
     width: 100%;
-    min-height: 800px;
     background-color: #EEEEEE;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.userStyle{
+    width: 15%;
+    height: auto;
+    padding: 0.1%;
+    margin: 5%;
+    background-color: #e8eef7;
+    border: 1px solid #60b7ff;
+    border-radius: 5px;
+}
+
+.userProfileImg{
+    width: 100%;
+}
+
+.userNameDiv{
+    text-align: center;
+    padding: 1%
+}
+
+.deleteButton{
+    background-color: #F05050;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    cursor: pointer;
 }

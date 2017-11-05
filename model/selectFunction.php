@@ -10,7 +10,7 @@ function selectFunction($user, $conditions = array()){
                 $res->execute();
                 $queryResults = $res->fetchAll(PDO::FETCH_ASSOC);
             }else if($conditions['table'] == 'users'){
-                $sql = 'SELECT firstName, lastName, email, username, profileImage FROM userdetails';
+                $sql = 'SELECT userID, firstName, lastName, email, username, profileImage FROM userdetails';
                 if($conditions['state'] == 'returnOne'){
                     $sql = $sql . " WHERE userID = " . $user;
                 }

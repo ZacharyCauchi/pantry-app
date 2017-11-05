@@ -1,6 +1,7 @@
 <?php
 include('../model/selectFunction.php');
 include('../model/insertFunction.php');
+include('../model/deleteFunction.php');
 include('../model/spoontacularFunction.php');
 include('../controller/inputFilter.php');
 
@@ -31,5 +32,9 @@ else if($_GET['state'] == 'likeRecipe'){
 else if ($_GET['state'] == 'showSavedRecipes'){
     $user = inputCheck($_POST['user']);
     selectFunction($user, array('state' => 'returnAll', 'table' => 'savedRecipes'));
+}
+else if ($_GET['state'] == 'deleteUser'){
+    $user = inputCheck($_POST['user']);
+    deleteFunction($user, array('table' => 'userdetails'));
 }
 ?>
