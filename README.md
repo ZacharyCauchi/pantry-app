@@ -12,11 +12,10 @@ Developed using PHP and a sprinkle of JS, Pantry Pal is being made as my final p
 - [x] Allow users to sign up
 - [x] Allow users to edit their personal information
 - [x] Upload database export
-- [ ] Create admin interface
+- [x] Create admin interface
 - [x] Connect to Recipe API
 - [x] Allow users to browse recipes
 - [x] Allow users to save ingredients
-- [ ] Let's be honest - most of the website's core functionality
 
 ## Software
 
