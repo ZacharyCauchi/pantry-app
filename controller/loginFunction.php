@@ -9,7 +9,7 @@ function loginFunction($user, $pass){
         if($dbPassword['role'] == 'admin'){
             $_SESSION['loggedIn'] = $dbPassword['role'];
             $_SESSION['userID'] = $dbPassword['userID'];
-            header('Location:index.php?state=a');
+            header('Location:index.php');
         } else {
             $_SESSION['loggedIn'] = 'user';
             $_SESSION['userID'] = $dbPassword['userID'];

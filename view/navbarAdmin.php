@@ -1,6 +1,6 @@
 <nav>
 <div class="navBar nav-wrapper">
-    <h1 onClick='scrollFunction3()'>Admin</h1>
+    <h1>Admin</h1>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
         <li onClick="showAccountUpdate(<?php echo $_SESSION['userID']; ?>)"><a><div class="navItem">Me</div></a></li>
