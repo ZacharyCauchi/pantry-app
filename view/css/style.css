@@ -1,5 +1,6 @@
 body {
     background-color: #EEEEEE;
+    font-size: 14px;
 }
 
 .navBar {
@@ -15,7 +16,7 @@ body {
 
 .navItem {
     color: #e2e2e2;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-family: 'mada';
     font-weight: 400;
     padding: 10px;
@@ -69,7 +70,7 @@ body {
     width: 70%;
     height: auto;
     font-family: 'mada';
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .ingredientListEle {
@@ -90,7 +91,7 @@ body {
 
 h1 {
     color: #e2e2e2;
-    font-size: 3em;
+    font-size: 3rem;
     font-family: 'mada';
     font-weight: 400;
     padding-left: 1%;
@@ -228,7 +229,7 @@ footer {
 
 .footerText {
     color: #e2e2e2;
-    font-size: 2em;
+    font-size: 2rem;
     font-family: 'mada';
     font-weight: 400;
 }
@@ -274,6 +275,37 @@ transform-origin: 50% 50%;
 }
 
 .recipeTitle {
-    width: 90%;
+    width: 80%;
     cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+
+.recipeStyle {
+    font-size: 1.2rem;
+}
+.ingredientStyle {
+    font-size: 1.2rem;
+}
+
+.ingRemoveBut{
+    width: 32px !important;
+    height: 32px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likeIcon{
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.listItem {
+    font-size: .8rem;
+}
+ol {
+    padding: 10px;
+}
 }
