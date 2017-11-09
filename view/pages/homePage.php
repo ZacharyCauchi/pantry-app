@@ -75,10 +75,10 @@
                     <div class="file-field input-field">
                         <div class="btn">
                             <span>Image</span>
-                            <input type="file" name="fileToUpload">
+                            <input type="file" name="fileToUpload" accept="image/*">
                         </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload a Profile Picture">
+                            <input class="file-path validate" type="text" placeholder="Upload a Profile Picture" accept="image/*">
                         </div>
                     </div>
                 </div>
