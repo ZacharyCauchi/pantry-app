@@ -14,7 +14,7 @@
     <script src='view/js/validation.js'></script>
     <title>Pantry Pal</title>
 </head>
-<body id="body">
+<body>
 
     <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -22,8 +22,8 @@
             <form action="index.php?state=login" method="POST">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" name="username" class="loginInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
-                        <label for="username" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
+                        <input id="username1" type="text" name="username" class="loginInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
+                        <label for="username1" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
                     </div>
                 </div>
                 <div class="row">
@@ -67,8 +67,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" name="username" class="registerInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
-                        <label for="username" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
+                        <input id="username2" type="text" name="username" class="registerInput validate" pattern="^[A-Za-z0-9_]{3,20}$"></input>
+                        <label for="username2" data-error="Username must be alphanumeric and have between 3 and 20 characters">Username</label>
                     </div>
                 </div>
                 <div class="row">
@@ -76,9 +76,11 @@
                         <div class="btn">
                             <span>Image</span>
                             <input type="file" name="fileToUpload" accept="image/*">
+                            <label>Profile Picture Upload</label>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload a Profile Picture" accept="image/*">
+                            <label>Profile Picture Upload</label>
                         </div>
                     </div>
                 </div>
@@ -110,7 +112,7 @@
     <div id="updateModal" class="modal">
         <div class="modal-content">
             <div id="updateDetailsHeading">
-                <img id="profileImageHeading" class="responsive-img circle"></img>
+                <img alt="profile Picture" id="profileImageHeading" class="responsive-img circle"></img>
                 <h4 id="updateHeading"> Update your details</h4>
             </div>
             <form action="index.php?state=updateDetails" method="POST">

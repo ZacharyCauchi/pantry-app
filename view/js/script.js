@@ -153,6 +153,7 @@ function recipeSearch(ingArr){
             var icon = document.createElement("img");
             icon.setAttribute("class", "likeButton");
             icon.setAttribute("src", "view/images/heartIcon.svg");
+            icon.setAttribute("alt", "likeButton");
             icon.setAttribute("recipeKey", recipeList[i].id)
             a.setAttribute("recipeKey", recipeList[i].id)
             a.appendChild(icon);
