@@ -9,7 +9,6 @@ function registerFunction($firstName, $lastName, $email, $user, $pass){
     if(isset($_POST["action"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
             $destination=$_SERVER['DOCUMENT_ROOT'].'/uploads/';
             $temp = explode(".", $_FILES["fileToUpload"]["name"]);

@@ -76,11 +76,9 @@
                         <div class="btn">
                             <span>Image</span>
                             <input type="file" name="fileToUpload" accept="image/*">
-                            <label>Profile Picture Upload</label>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload a Profile Picture" accept="image/*">
-                            <label>Profile Picture Upload</label>
                         </div>
                     </div>
                 </div>
@@ -216,8 +214,9 @@
     </div>
 
     <footer>
-        <div class="footerText">This is the Footer</div>
-        <?php if(isset($e)){echo $e;} ?>
+        <a href="https://twitter.com/ZacharyCauchi"><img class="footerItem" src="view/images/twitter.svg"></img></a>
+        <a href="https://github.com/ZacharyCauchi/pantry-app"><img class="footerItem" src="view/images/github.svg"></img></a>
+        <a href="https://www.linkedin.com/in/zachary-cauchi-81458b150/"><img class="footerItem" src="view/images/linkedin.svg"></img></a>
     </footer>
 
 </body>

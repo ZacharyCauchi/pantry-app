@@ -231,11 +231,13 @@ footer {
     justify-content: center;
 }
 
-.footerText {
+.footerItem {
     color: #e2e2e2;
     font-size: 2rem;
     font-family: 'mada';
     font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* Footer Styling End */
 
