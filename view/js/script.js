@@ -252,6 +252,7 @@ function likeFunction(){
             });
         } else {
             console.log("you must log in to use this feature")
+            Materialize.toast("You must be logged in to use this feature", 4000)
         }
         
     })

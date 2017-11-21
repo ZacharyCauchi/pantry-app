@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="view/materialize/css/materialize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="view/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mada:200,400" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="view/materialize/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src='view/js/script.js'></script>
     <script src='view/js/validation.js'></script>
     <title>Pantry Pal</title>
@@ -214,9 +214,9 @@
     </div>
 
     <footer>
-        <a href="https://twitter.com/ZacharyCauchi"><img class="footerItem" src="view/images/twitter.svg"></img></a>
-        <a href="https://github.com/ZacharyCauchi/pantry-app"><img class="footerItem" src="view/images/github.svg"></img></a>
-        <a href="https://www.linkedin.com/in/zachary-cauchi-81458b150/"><img class="footerItem" src="view/images/linkedin.svg"></img></a>
+        <a class="footerItem" href="https://twitter.com/ZacharyCauchi"><img src="view/images/twitter.svg"></img></a>
+        <a class="footerItem" href="https://github.com/ZacharyCauchi/pantry-app"><img src="view/images/github.svg"></img></a>
+        <a class="footerItem" href="https://www.linkedin.com/in/zachary-cauchi-81458b150/"><img src="view/images/linkedin.svg"></img></a>
     </footer>
 
 </body>
